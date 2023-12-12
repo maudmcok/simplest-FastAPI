@@ -4,7 +4,7 @@ services:
     container_name: fastapi-application
     command: >
       /bin/sh -c "
-      echo 'from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}' > main.py 
+      echo 'from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}' > main.py "
     volumes:
       - ./app:/app
     ports:
