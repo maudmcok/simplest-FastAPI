@@ -5,7 +5,7 @@ services:
     environment:
       PORT: 75870
     ports:
-      - '75870:75870'
+      - '7587:7587'
     restart: "always"
 
     
