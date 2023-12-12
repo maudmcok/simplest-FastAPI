@@ -4,7 +4,9 @@ services:
     container_name: fastapi-application
     command: >
       /bin/sh -c "
-      "uvicorn app.main:app --host 0.0.0.0 --port 7587"
+      echo 'from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}' > main.py &&
+      pip install uvicorn[standard]==0.20.0 gunicorn==20.1.0 fastapi[all]==0.88.0 &&
+      uvicorn app.main:app --host 0.0.0.0 --port 4300"
     volumes:
       - ./app:/app
     ports:
